@@ -60,7 +60,7 @@ const [pokemons, setPokemons] = useState([])
 
 
   return (
-    <main >
+    <main className='pb-10'>
       <header>
       <div className='h-16 bg-red-600 relative'></div>
         <img className='absolute h-16 w-80 z-30 top-2 left-6 ' src="/images/pokedex.png" alt="" />
