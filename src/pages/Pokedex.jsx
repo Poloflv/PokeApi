@@ -73,7 +73,6 @@ const [pokemons, setPokemons] = useState([])
         <form action="" className='flex mt-10'>
           <div className='flex-1 ease-linear'>
             <input value={pokemonName} onChange={handleChange(setPokemonName)} placeholder='Search pokemon....' type="text" className='p-3 h-14  drop-shadow-lg w-4/5' />
-            <button className='bg-[#D93F3F] p-4 flex-1 text-white text-xl font-medium'>Search</button> 
           </div>
           <select value={pokemonType} onChange={handleChange(setPokemonType)} name="" id="" className='flex-1 drop-shadow-lg'>
             <option value="" className='text-center'>All pokemons</option>
