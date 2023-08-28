@@ -72,7 +72,7 @@ const PokemonDetail = () => {
 
 
 
-            <div><h2>Skills</h2> <div className="flex"> <p className={`h-[25px] w-full mr-3 px-4 relative mb-8 ${
+            <div><h2>Skills</h2> <div className="flex"> <p className={`h-[25px] w-full mr-3 line-clamp-1 px-4 relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
             }`}>{pokemonData?.abilities[0].ability.name}</p> <p className={`h-[25px] w-full line-clamp-1 px-4 relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
