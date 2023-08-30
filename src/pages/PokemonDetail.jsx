@@ -10,32 +10,27 @@ const PokemonDetail = () => {
 
   const { pokemonId } = useParams();
 
+  const isUse = pokemonData?.types[0]
+  const isUse2 = pokemonData?.types[1]
+
+  const abilityName = pokemonData?.abilities[0].ability.name
+  const abilityName2 = pokemonData?.abilities[1].ability.name
+
   useEffect(() => {
     getPokemonById(pokemonId)
       .then((data) => setPokemonData(data))
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(pokemonData);
   return (
     <main className="bg-slate-50 h-full ">
-      <header>
-        <div className="h-16 bg-red-600 relative"></div>
-        <img
-          className="absolute h-16 w-80 z-30 top-2 left-6 "
-          src="/images/pokedex.png"
-          alt=""
-        />
-        <div className="h-10 bg-black relative">
-          <div className='h-16 aspect-square bg-white rounded-full absolute left-3/4 -translate-x-1/2 top-0 border-[8px] border-black after:block after:content-[""] after:h-8 after:aspect-square after:bg-slate-800 after:rounded-full after:absolute  after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:top-1/2 after:border-4 after:border-black'></div>
-        </div>
-      </header>
+
 
       <section className="px-2 ">
         {/* aqui se define el tamaño */}
         <article className="flex flex-col justify-center items-center m-auto w-3/4 mt-10 bg-white border-[5px] rounded-md pb-4">
           <header
-            className={`h-[140px] w-full  relative mb-8 ${
+            className={`h-[140px] w-full  relative mb-8 rounded-t ${
               bgStylePokemonType[pokemonData?.types[0]]
             }`}
           >
@@ -64,19 +59,29 @@ const PokemonDetail = () => {
             <article className="w-full flex flex-wrap">
               <div className="flex justify-center items-center gap-4 w-full flex-wrap">
               
-              <div><h2>Type</h2> <div className="flex"> <p className={`h-[25px] w-full mr-3 px-4 relative mb-8 ${
+              <div><h2>Type</h2> <div className="flex">
+                {isUse != undefined && <p className={`h-[25px] w-full mr-3 px-4 relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
-            }`}>{pokemonData?.types[0]}</p> <p className={`h-[25px] w-full px-4  relative mb-8 ${
+            }`}>{pokemonData?.types[0]}</p>}
+                
+                {isUse2 != undefined && <p className={`h-[25px] w-full px-4  relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
-            }`}>{pokemonData?.types[1]}</p></div></div>
+            }`}>{pokemonData?.types[1]}</p>}
+            
+            </div></div>
 
 
 
-            <div><h2>Skills</h2> <div className="flex"> <p className={`h-[25px] w-full mr-3 line-clamp-1 px-4 relative mb-8 ${
+            <div><h2>Skills</h2> <div className="flex"> 
+            {abilityName != undefined && <p className={`h-[25px] w-full mr-3 line-clamp-1 px-4 relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
-            }`}>{pokemonData?.abilities[0].ability.name}</p> <p className={`h-[25px] w-full line-clamp-1 px-4 relative mb-8 ${
+            }`}>{pokemonData?.abilities[0].ability.name}</p> }
+
+            {abilityName2 != undefined && <p className={`h-[25px] w-full line-clamp-1 px-4 relative mb-8 ${
               bgStylePokemonType[pokemonData?.types[0]]
-            }`}>{pokemonData?.abilities[1].ability.name}</p></div></div>
+            }`}>{pokemonData?.abilities[1].ability.name}</p>}
+
+            </div></div>
             
               </div>
             </article>

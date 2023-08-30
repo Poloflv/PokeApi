@@ -7,7 +7,7 @@ import { bgStylePokemonType, borderStyledPokemonByType } from '../../shared/poke
 const PokemonCard = ({pokemonUrl}) => {
     const [pokemonInfo, setPokemonInfo] = useState(null)
 
-
+console.log(pokemonInfo);
 
 
     useEffect(() => {
