@@ -7,6 +7,8 @@ import { bgStylePokemonType, borderStyledPokemonByType } from '../../shared/poke
 const PokemonCard = ({pokemonUrl}) => {
     const [pokemonInfo, setPokemonInfo] = useState(null)
 
+    const image = pokemonInfo?.image
+
 console.log(pokemonInfo);
 
 
@@ -20,7 +22,7 @@ console.log(pokemonInfo);
      className={`text-center capitalize border-[5px] rounded-md ${borderStyledPokemonByType[pokemonInfo?.types[0]]} `}>
       <header className={`h-[80px]  relative mb-8 ${bgStylePokemonType[pokemonInfo?.types[0]]}`}>
         <div className='absolute left-1/2 -translate-x-1/2 -bottom-8 h-[65px] aspect-square'>
-          <img className='h-full w-full object-contain' src={pokemonInfo?.image} alt="" />
+          <img className='h-full w-full object-contain' src={image ? pokemonInfo?.image : pokemonInfo?.imageSecond} alt="" />
         </div>
       </header>
       <section >

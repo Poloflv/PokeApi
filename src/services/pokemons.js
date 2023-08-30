@@ -30,6 +30,7 @@ export const getPokemonById = async (pokemonId) => {
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
         image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
+        imageSecond: data.sprites.other["official-artwork"].front_default,
         weigth: data.weight,
         heigth: data.height,
         abilities: data.abilities,
@@ -47,6 +48,7 @@ export const getPokemonByUrl = async (pokemonUrl) => {
         types: formatTypes(data.types),
         stats: formatStats(data.stats),
         image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
+        imageSecond: data.sprites.other["official-artwork"].front_default
 
     }
 

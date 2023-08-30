@@ -7,20 +7,22 @@ import MovesPokemon from "../pokemonDetail/MovesPokemon";
 
 const PokemonDetail = () => {
   const [pokemonData, setPokemonData] = useState(null);
-
+  
   const { pokemonId } = useParams();
-
+  
   const isUse = pokemonData?.types[0]
   const isUse2 = pokemonData?.types[1]
-
+  
   const abilityName = pokemonData?.abilities[0].ability.name
   const abilityName2 = pokemonData?.abilities[1].ability.name
-
+  
   useEffect(() => {
     getPokemonById(pokemonId)
-      .then((data) => setPokemonData(data))
-      .catch((err) => console.log(err));
+    .then((data) => setPokemonData(data))
+    .catch((err) => console.log(err));
   }, []);
+  
+  const image = pokemonData?.image
 
   return (
     <main className="bg-slate-50 h-full ">
@@ -37,7 +39,7 @@ const PokemonDetail = () => {
             <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 h-[65px] aspect-square">
               <img
                 className="h-full w-full object-contain"
-                src={pokemonData?.image}
+                src={image ? pokemonData?.image : pokemonData?.imageSecond}
                 alt=""
               />
             </div>
