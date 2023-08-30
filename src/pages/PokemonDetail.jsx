@@ -13,8 +13,8 @@ const PokemonDetail = () => {
   const isUse = pokemonData?.types[0]
   const isUse2 = pokemonData?.types[1]
   
-  const abilityName = pokemonData?.abilities[0].ability.name
-  const abilityName2 = pokemonData?.abilities[1].ability.name
+  const abilityName = pokemonData?.abilities[0]?.ability?.name
+  const abilityName2 = pokemonData?.abilities[1]?.ability?.name
   
   useEffect(() => {
     getPokemonById(pokemonId)

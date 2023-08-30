@@ -9,7 +9,6 @@ const PokemonCard = ({pokemonUrl}) => {
 
     const image = pokemonInfo?.image
 
-console.log(pokemonInfo);
 
 
     useEffect(() => {
