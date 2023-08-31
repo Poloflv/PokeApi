@@ -94,7 +94,7 @@ const Pokedex = () => {
               onChange={handleChange(setPokemonName)}
               placeholder="Search pokemon...."
               type="text"
-              className="p-3 h-14  drop-shadow-lg w-4/5"
+              className="p-3 h-14 text-xs drop-shadow-lg w-4/5 sm:text-base"
             />
           </div>
           <select

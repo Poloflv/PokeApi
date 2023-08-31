@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <main className="min-h-screen grid grid-rows-[1fr_auto]  bg-[#FFFFFF7D]">
-      <section className="flex justify-center  items-center">
+      <section className="flex justify-center p-2 items-center">
         <article>
           <div>
             <img src="/images/pokedex.png" alt="" />
@@ -31,7 +31,7 @@ const Home = () => {
               type="text"
               required
             />
-            <button className="bg-[#D93F3F] text-[#FFFFFF] px-10">Start!</button>
+            <button className="bg-[#D93F3F] text-[#FFFFFF] px-6 sm:px-10">Start!</button>
           </form>
         </article>
       </section>

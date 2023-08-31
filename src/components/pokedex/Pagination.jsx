@@ -24,7 +24,7 @@ const Pagination = ({lastPage,pagesInCurrentBlock, setCurrentPage, currentPage})
 
     const handleFirtsPage = ( )=> setCurrentPage (FIRST_PAGE)
   return (
-    <ul className='flex justify-center gap-4 p-4 items-center'>
+    <ul className='flex justify-center gap-4 p-4 items-center flex-wrap'>
         {currentPage >= 2 && <li className='cursor-pointer' onClick={handleFirtsPage}>{"<<"}</li>}
 
         {currentPage >= 2 && <li className='cursor-pointer' onClick={handlePreviusPage}>{"<"}</li>}
